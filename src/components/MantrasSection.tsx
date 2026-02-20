@@ -1,29 +1,11 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
 
+import { getComponentContent } from '@/lang';
+
 const MantrasSection = () => {
   const { language } = useLanguage();
-
-  const content = {
-    en: {
-      title: 'Sacred Mantras',
-      mantra1: 'Om Argaladevi Namaha',
-      meaning1: 'I bow to the divine mother Argaladevi',
-      mantra2: 'Sarva Mangala Mangalye Shive Sarvartha Sadhike',
-    },
-    te: {
-      title: 'పవిత్ర మంత్రాలు',
-      mantra1: 'Om Argaladevi Namaha',
-      meaning1: 'దివ్య మాత అర్గళాదేవికి నమస్కరిస్తున్నాను',
-      mantra2: 'Sarva Mangala Mangalye Shive Sarvartha Sadhike',
-    },
-    hi: {
-      title: 'पवित्र मंत्र',
-      mantra1: 'Om Argaladevi Namaha',
-      meaning1: 'मैं दिव्य माता अर्गलादेवी को नमन करता हूँ',
-      mantra2: 'Sarva Mangala Mangalye Shive Sarvartha Sadhike',
-    }
-  }[language];
+  const content = getComponentContent(language).MantrasSection;
 
   return (
     <section className="py-20 px-4 bg-transparent">

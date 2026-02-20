@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;500;600;700&family=Ramabhadra&display=swap');
 @import url('https://fonts.cdnfonts.com/css/samarkan');
 
 @tailwind base;
@@ -152,7 +152,7 @@
   }
 
   .font-telugu {
-    font-family: 'Noto Sans Telugu', serif;
+    font-family: 'Ramabhadra', 'Noto Sans Telugu', serif;
   }
 
   .sacred-divider {

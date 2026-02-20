@@ -2,35 +2,11 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
 import { Shield, Sparkles } from 'lucide-react';
 
+import { getComponentContent } from '@/lang';
+
 const WelcomeSection = () => {
   const { language } = useLanguage();
-
-  const content = {
-    en: {
-      title: 'Welcome to the Divine Realm',
-      desc: 'Argaladevi, the divine mother goddess, represents the ultimate source of protection, prosperity, and spiritual enlightenment. Her divine presence brings peace, removes obstacles, and blesses devotees with abundance in all aspects of life.',
-      protection_title: 'Divine Protection',
-      protection_desc: 'Argaladevi is renowned for her protective powers, shielding devotees from negative energies, evil forces, and life\'s challenges. Her divine grace creates a protective shield around those who seek her blessings with pure heart.',
-      prosperity_title: 'Spiritual Prosperity',
-      prosperity_desc: 'The goddess bestows both material and spiritual prosperity upon her devotees. Through her blessings, one experiences growth in wealth, health, knowledge, and spiritual wisdom, leading to a fulfilling and abundant life.',
-    },
-    te: {
-      title: 'దివ్య లోకానికి స్వాగతం',
-      desc: 'అర్గళాదేవి, దివ్య మాతృదేవత, రక్షణ, సంపద మరియు ఆధ్యాత్మిక జ్ఞానోదయం యొక్క అంతిమ మూలాన్ని సూచిస్తుంది. ఆమె దివ్య సన్నిధి శాంతిని తెస్తుంది, అడ్డంకులను తొలగిస్తుంది మరియు భక్తులను జీవితంలోని అన్ని అంశాలలో సమృద్ధితో ఆశీర్వదిస్తుంది.',
-      protection_title: 'దివ్య రక్షణ',
-      protection_desc: 'అర్గళాదేవి తన రక్షణ శక్తులకు ప్రసిద్ధి, భక్తులను ప్రతికూల శక్తులు, దుష్ట శక్తులు మరియు జీవిత సవాళ్ల నుండి కాపాడుతుంది.',
-      prosperity_title: 'ఆధ్యాత్మిక సంపద',
-      prosperity_desc: 'దేవి తన భక్తులకు భౌతిక మరియు ఆధ్యాత్మిక సంపదను ప్రసాదిస్తుంది. ఆమె ఆశీర్వాదాల ద్వారా, సంపద, ఆరోగ్యం, జ్ఞానం మరియు ఆధ్యాత్మిక జ్ఞానంలో వృద్ధిని అనుభవిస్తారు.',
-    },
-    hi: {
-      title: 'दिव्य लोक में आपका स्वागत है',
-      desc: 'अर्गलादेवी, दिव्य मातृदेवी, सुरक्षा, समृद्धि और आध्यात्मिक ज्ञान के परम स्रोत का प्रतिनिधित्व करती हैं। उनकी दिव्य उपस्थिति शांति लाती है, बाधाओं को दूर करती है और भक्तों को जीवन के सभी पहलुओं में प्रचुरता का आशीर्वाद देती है।',
-      protection_title: 'दिव्य सुरक्षा',
-      protection_desc: 'अर्गलादेवी अपनी सुरक्षात्मक शक्तियों के लिए प्रसिद्ध हैं, भक्तों को नकारात्मक ऊर्जाओं, बुरी शक्तियों और जीवन की चुनौतियों से बचाती हैं।',
-      prosperity_title: 'आध्यात्मिक समृद्धि',
-      prosperity_desc: 'देवी अपने भक्तों को भौतिक और आध्यात्मिक दोनों प्रकार की समृद्धि प्रदान करती हैं। उनके आशीर्वाद से धन, स्वास्थ्य, ज्ञान में वृद्धि होती है।',
-    }
-  }[language];
+  const content = getComponentContent(language).WelcomeSection;
 
   return (
     <section className="py-20 px-4 bg-transparent">

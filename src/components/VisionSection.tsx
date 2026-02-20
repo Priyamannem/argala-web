@@ -1,23 +1,11 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
 
+import { getComponentContent } from '@/lang';
+
 const VisionSection = () => {
   const { language } = useLanguage();
-
-  const content = {
-    en: {
-      title: 'A Temple Beyond Time',
-      quote: '"Sri Maha Chandi Argala Kshetram is not just a temple — it is a spiritual movement. It aims to preserve the essence of Sanatana Dharma, Vedic tradition, and divine feminine power in its purest form. Our purpose is to create a timeless space where devotion, knowledge, and service unite — a sacred center that will inspire faith and spiritual awakening for centuries."',
-    },
-    te: {
-      title: 'కాలాతీత ఆలయం',
-      quote: '"శ్రీ మహా చండి అర్గళ క్షేత్రం కేవలం ఒక ఆలయం కాదు — ఇది ఒక ఆధ్యాత్మిక ఉద్యమం. ఇది సనాతన ధర్మం, వైదిక సంప్రదాయం మరియు దివ్య స్త్రీ శక్తి యొక్క సారాంశాన్ని దాని స్వచ్ఛమైన రూపంలో సంరక్షించాలనే లక్ష్యం కలిగి ఉంది."',
-    },
-    hi: {
-      title: 'समय से परे एक मंदिर',
-      quote: '"श्री महा चण्डी अर्गला क्षेत्रम केवल एक मंदिर नहीं है — यह एक आध्यात्मिक आंदोलन है। इसका उद्देश्य सनातन धर्म, वैदिक परंपरा और दिव्य स्त्री शक्ति के सार को उसके शुद्धतम रूप में संरक्षित करना है। हमारा उद्देश्य एक ऐसा कालजयी स्थान बनाना है जहाँ भक्ति, ज्ञान और सेवा एकजुट हों - एक पवित्र केंद्र जो सदियों तक विश्वास और आध्यात्मिक जागृति को प्रेरित करेगा। "',
-    }
-  }[language];
+  const content = getComponentContent(language).VisionSection;
 
   return (
     <section className="py-20 px-4 bg-transparent relative overflow-hidden">

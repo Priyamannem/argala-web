@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import hangDiyaImg from '@/assets/hang-diya.png';
 
+import { getComponentContent } from '@/lang';
+
 interface HangingDiyasProps {
     isHomePage?: boolean;
     footerRef?: React.RefObject<HTMLElement | null>;
@@ -10,12 +12,7 @@ interface HangingDiyasProps {
 const HangingDiyas = ({ isHomePage = false, footerRef }: HangingDiyasProps) => {
     const { language } = useLanguage();
     const [diyaMaxHeight, setDiyaMaxHeight] = useState<string>(isHomePage ? '90vh' : '50vh');
-
-    const content = {
-        en: { left: 'Hanging Diya Left', right: 'Hanging Diya Right' },
-        te: { left: 'తొడిగే దీపం ఎడమ', right: 'తొడిగే దీపం కుడి' },
-        hi: { left: 'लटकता हुआ दीया बाएं', right: 'लटकता हुआ दीया दाएं' }
-    }[language];
+    const content = getComponentContent(language).HangingDiyas;
 
     useEffect(() => {
         const handleScroll = () => {

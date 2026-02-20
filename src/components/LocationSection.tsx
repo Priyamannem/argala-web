@@ -2,44 +2,11 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
 import { MapPin } from 'lucide-react';
 
+import { getComponentContent } from '@/lang';
+
 const LocationSection = () => {
   const { language } = useLanguage();
-
-  const content = {
-    en: {
-      title: 'Location & Significance',
-      subtitle: 'The Divine Power of the Place',
-      points: [
-        'Only 20 km from Yadagirigutta and Swarnagiri Temples',
-        'Just 25 km from Ratnagiri Temple (Aliyabad)',
-        'Naturally formed hilltop site surrounded by greenery and serenity',
-        'Located beside a natural Pushkarini, symbol of divine energy and purity',
-      ],
-      desc: 'The chosen land for the temple is not just geographically blessed — it vibrates with spiritual resonance. Every stone, every breeze here carries the silent power of devotion.',
-    },
-    te: {
-      title: 'స్థానం & ప్రాముఖ్యత',
-      subtitle: 'ఈ ప్రదేశం యొక్క దివ్య శక్తి',
-      points: [
-        'యాదగిరిగుట్ట మరియు స్వర్ణగిరి ఆలయాల నుండి కేవలం 20 కి.మీ',
-        'రత్నగిరి ఆలయం (అలియాబాద్) నుండి కేవలం 25 కి.మీ',
-        'పచ్చదనం మరియు ప్రశాంతతలతో చుట్టుముట్టబడిన సహజంగా ఏర్పడిన కొండ ప్రదేశం',
-        'దివ్య శక్తి మరియు పవిత్రత యొక్క చిహ్నమైన సహజ పుష్కరిణి పక్కన ఉంది',
-      ],
-      desc: 'ఆలయం కోసం ఎంపిక చేయబడిన భూమి భౌగోళికంగా మాత్రమే ఆశీర్వదించబడలేదు — ఇది ఆధ్యాత్మిక ప్రతిధ్వనితో ప్రకంపిస్తుంది.',
-    },
-    hi: {
-      title: 'स्थान और महत्व',
-      subtitle: 'इस स्थान की दिव्य शक्ति',
-      points: [
-        'यादगिरिगुट्टा और स्वर्णगिरि मंदिरों से केवल 20 किमी',
-        'रत्नगिरि मंदिर (अलियाबाद) से केवल 25 किमी',
-        'हरियाली और शांति से घिरा प्राकृतिक रूप से निर्मित पहाड़ी स्थल',
-        'दिव्य ऊर्जा और पवित्रता के प्रतीक प्राकृतिक पुष्करिणी के बगल में स्थित',
-      ],
-      desc: 'मंदिर के लिए चुनी गई भूमि केवल भौगोलिक रूप से धन्य नहीं है — यह आध्यात्मिक प्रतिध्वनि से कंपित होती है।',
-    }
-  }[language];
+  const content = getComponentContent(language).LocationSection;
 
   return (
     <section className="py-20 px-4 bg-transparent">

@@ -6,44 +6,14 @@ import heroTemple2 from '@/assets/hero-temple-2.jpg';
 import heroTemple3 from '@/assets/hero-temple-3.jpg';
 import borderImg from '@/assets/border.png';
 
+import { getComponentContent } from '@/lang';
+
 const images = [heroTemple1, heroTemple2, heroTemple3];
 
 const HeroSection = () => {
   const { language } = useLanguage();
   const [current, setCurrent] = useState(0);
-
-  const content = {
-    en: {
-      title: 'Sri Maha Chandi Argala Kshetram',
-      subtitle: 'The Temple of Eternal Power is Rising...',
-      subtitle2: 'Be a Part of Its Sacred Journey',
-      mantra: 'अर्गला देवी शरणं गच्छामि',
-      mantra_meaning: 'We seek refuge in Goddess Argaladevi',
-      cta_donate: 'Make Sacred Offering',
-      cta_darshan: 'Experience Divine Darshan',
-      img_alt: 'Temple',
-    },
-    te: {
-      title: 'శ్రీ మహా చండి అర్గళ క్షేత్రం',
-      subtitle: 'శాశ్వత శక్తి ఆలయం ఎదుగుతోంది...',
-      subtitle2: 'దాని పవిత్ర ప్రయాణంలో భాగం కండి',
-      mantra: 'अर्गला देवी शरणं गच्छामि',
-      mantra_meaning: 'మేము అర్గళాదేవి శరణు కోరుతున్నాము',
-      cta_donate: 'పవిత్ర సమర్పణ',
-      cta_darshan: 'దివ్య దర్శనం',
-      img_alt: 'ఆలయం',
-    },
-    hi: {
-      title: 'श्री महा चण्डी अर्गला क्षेत्रम',
-      subtitle: 'शाश्वत शक्ति का मंदिर उठ रहा है...',
-      subtitle2: 'इसकी पवित्र यात्रा का हिस्सा बनें',
-      mantra: 'अर्गला देवी शरणं गच्छामि',
-      mantra_meaning: 'हम देवी अर्गलादेवी की शरण में जाते हैं',
-      cta_donate: 'पवित्र समर्पण करें',
-      cta_darshan: 'दिव्य दर्शन',
-      img_alt: 'मंदिर',
-    }
-  }[language];
+  const content = getComponentContent(language).HeroSection;
 
   useEffect(() => {
     const interval = setInterval(() => setCurrent((p) => (p + 1) % images.length), 6000);

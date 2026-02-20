@@ -9,6 +9,8 @@ import HangingDiyas from '@/components/HangingDiyas';
 import galleryBg from '@/assets/gallery.jpeg';
 import toranamImg from '@/assets/toranam.png';
 
+import { getComponentContent } from '@/lang';
+
 const Contact = () => {
   const { language } = useLanguage();
   const [name, setName] = useState('');
@@ -17,68 +19,7 @@ const Contact = () => {
   const [message, setMessage] = useState('');
   const footerRef = useRef<HTMLDivElement>(null);
 
-  const content = {
-    en: {
-      title: 'Contact Us',
-      form_title: 'Send a Message',
-      name: 'Full Name',
-      email: 'Email Address',
-      subject: 'Subject',
-      message: 'Your Message',
-      send: 'Send Message',
-      contact_info_title: 'Contact Information',
-      address: 'Gopalapuram & Kashiredypally, Markook Mandal, Siddipet District, Telangana.',
-      call_to_action: 'Feel the call of Maa Chandi Argala Devi?',
-      reach_out: 'Reach out and be part of this sacred journey.',
-      path_of_giving: 'The Path of Giving',
-      donation_devotion: '"Every donation is devotion in action."',
-      contribution_worship: '"Every contribution becomes eternal worship."',
-      connect_today: 'Connect with us today',
-      faith_service: 'Let your faith take form in service of the Divine.',
-      error_required: 'Please fill all required fields',
-      success_message: 'Message sent successfully! We will get back to you soon.',
-    },
-    te: {
-      title: 'సంప్రదించండి',
-      form_title: 'సందేశం పంపండి',
-      name: 'పూర్తి పేరు',
-      email: 'ఈమెయిల్ చిరునామా',
-      subject: 'విషయం',
-      message: 'మీ సందేశం',
-      send: 'సందేశం పంపండి',
-      contact_info_title: 'సంప్రదింపు సమాచారం',
-      address: 'గోపాలపురం & కాశిరెడ్డిపల్లి, మార్కూక్ మండలం, సిద్దిపేట జిల్లా, తెలంగాణ.',
-      call_to_action: 'మా చండి అర్గళాదేవి పిలుపును అనుభవిస్తున్నారా?',
-      reach_out: 'సంప్రదించండి మరియు ఈ పవిత్ర ప్రయాణంలో భాగం అవ్వండి.',
-      path_of_giving: 'దాన మార్గం',
-      donation_devotion: '"ప్రతి విరాళం భక్తికి నిదర్శనం."',
-      contribution_worship: '"ప్రతి సహాయం శాశ్వతమైన ఆరాధన అవుతుంది."',
-      connect_today: 'ఈరోజే మాతో కనెక్ట్ అవ్వండి',
-      faith_service: 'మీ విశ్వాసాన్ని దైవ సేవలో రూపం దాల్చనివ్వండి.',
-      error_required: 'దయచేసి అన్ని వివరాలను నింపండి',
-      success_message: 'సందేశం విజయవంతంగా పంపబడింది! మేము త్వరలో మిమ్మల్ని సంప్రదిస్తాము.',
-    },
-    hi: {
-      title: 'संपर्क करें',
-      form_title: 'संदेश भेजें',
-      name: 'पूरा नाम',
-      email: 'ईमेल पता',
-      subject: 'विषय',
-      message: 'आपका संदेश',
-      send: 'संदेश भेजें',
-      contact_info_title: 'संपर्क विवरण',
-      address: 'गोपालपुरम और काशीरेड्डीपल्ली, मार्कूक मंडल, सिद्दीपेट जिला, तेलंगाना.',
-      call_to_action: 'माँ चण्डी अर्गला देवी के आह्वान को महसूस कर रहे हैं?',
-      reach_out: 'संपर्क करें और इस पवित्र यात्रा का हिस्सा बनें।',
-      path_of_giving: 'दान का मार्ग',
-      donation_devotion: '"हर दान क्रिया में भक्ति है।"',
-      contribution_worship: '"हर योगदान शाश्वत पूजा बन जाता है।"',
-      connect_today: 'आज ही हमसे जुड़ें',
-      faith_service: 'अपनी आस्था को परमात्मा की सेवा में रूप लेने दें।',
-      error_required: 'कृपया सभी आवश्यक फ़ील्ड भरें',
-      success_message: 'संदेश सफलतापूर्वक भेजा गया! हम जल्द ही आपसे संपर्क करेंगे।',
-    }
-  }[language];
+  const content = getComponentContent(language).ContactPage;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

@@ -4,53 +4,11 @@ import templeConstruction from '@/assets/temple-construction.jpg';
 import galleryBg from '@/assets/gallery.jpeg';
 import { CheckCircle, Flower2 } from 'lucide-react';
 
+import { getComponentContent } from '@/lang';
+
 const ConstructionSection = () => {
   const { language } = useLanguage();
-
-  const content = {
-    en: {
-      principles_title: 'Sacred Design Principles',
-      principles_desc: 'Our temple construction follows the ancient science of Vastu Shastra and traditional Agama scriptures. Every aspect - from the foundation to the pinnacle - is designed to create perfect harmony between the earthly and divine realms.',
-      principles_desc2: 'The temple\'s orientation, proportions, and sacred geometry are carefully calculated to maximize the flow of positive energy and create an atmosphere conducive to meditation, prayer, and spiritual awakening.',
-      features_title: 'Key Architectural Features',
-      features: [
-        'Traditional Dravidian architectural style',
-        'Hand-carved stone sculptures and pillars',
-        'Sacred geometric patterns in floor design',
-        'Natural lighting for divine ambiance',
-        'Eco-friendly construction materials',
-      ],
-      img_alt: 'Temple Architecture',
-    },
-    te: {
-      principles_title: 'పవిత్ర రూపకల్పన సూత్రాలు',
-      principles_desc: 'మా ఆలయ నిర్మాణం వాస్తు శాస్త్రం మరియు సంప్రదాయ ఆగమ గ్రంథాల ప్రాచీన శాస్త్రాన్ని అనుసరిస్తుంది.',
-      principles_desc2: 'ఆలయం యొక్క దిశ, అనుపాతాలు మరియు పవిత్ర రేఖాగణితం సానుకూల శక్తి ప్రవాహాన్ని గరిష్టం చేయడానికి జాగ్రత్తగా లెక్కించబడతాయి.',
-      features_title: 'ముఖ్య వాస్తుశిల్ప లక్షణాలు',
-      features: [
-        'సంప్రదాయ ద్రావిడ వాస్తుశిల్ప శైలి',
-        'చేతితో చెక్కిన రాతి శిల్పాలు మరియు స్తంభాలు',
-        'నేల రూపకల్పనలో పవిత్ర రేఖాగణిత నమూనాలు',
-        'దివ్య వాతావరణం కోసం సహజ వెలుగు',
-        'పర్యావరణ అనుకూల నిర్మాణ సామగ్రి',
-      ],
-      img_alt: 'ఆలయ వాస్తుశిల్పం',
-    },
-    hi: {
-      principles_title: 'पवित्र डिजाइन सिद्धांत',
-      principles_desc: 'हमारा मंदिर निर्माण वास्तु शास्त्र और पारंपरिक आगम ग्रंथों के प्राचीन विज्ञान का पालन करता है।',
-      principles_desc2: 'मंदिर की दिशा, अनुपात और पवित्र ज्यामिति सकारात्मक ऊर्जा के प्रवाह को अधिकतम करने के लिए सावधानीपूर्वक गणना की जाती है।',
-      features_title: 'प्रमुख वास्तुशिल्प विशेषताएं',
-      features: [
-        'पारंपरिक द्रविड़ वास्तुशिल्प शैली',
-        'हाथ से तराशी गई पत्थर की मूर्तियां और स्तंभ',
-        'फर्श डिजाइन में पवित्र ज्यामितीय पैटर्न',
-        'दिव्य माहौल के लिए प्राकृतिक प्रकाश',
-        'पर्यावरण अनुकूल निर्माण सामग्री',
-      ],
-      img_alt: 'मंदिर वास्तुकला',
-    }
-  }[language];
+  const content = getComponentContent(language).ConstructionSection;
 
   return (
     <section className="relative py-24 px-4 overflow-hidden min-h-screen flex flex-col justify-center">

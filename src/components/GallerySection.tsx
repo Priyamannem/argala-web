@@ -1,112 +1,138 @@
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { motion } from 'framer-motion';
-import { X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { X, ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react';
+import { getComponentContent } from '@/lang';
 import heroTemple1 from '@/assets/hero-temple-1.jpg';
 import heroTemple2 from '@/assets/hero-temple-2.jpg';
 import heroTemple3 from '@/assets/hero-temple-3.jpg';
 import goddessStatue from '@/assets/goddess-statue.jpg';
-import templeConstruction from '@/assets/temple-construction.jpg';
+import galleryBg from '@/assets/gallery.jpeg';
 
 const images = [
-    { src: heroTemple1, alt: 'Temple front view' },
-    { src: heroTemple2, alt: 'Sanctum area' },
-    { src: heroTemple3, alt: 'Evening aarti' },
-    { src: goddessStatue, alt: 'Divine statue' },
-    { src: templeConstruction, alt: 'Construction progress' },
+    { url: heroTemple1, title: 'Temple Front View' },
+    { url: heroTemple2, title: 'Temple Arch' },
+    { url: heroTemple3, title: 'Evening View' },
+    { url: goddessStatue, title: 'Divine Statue' },
+    { url: galleryBg, title: 'Temple Site' },
 ];
 
 const GallerySection = () => {
     const { language } = useLanguage();
     const [selected, setSelected] = useState<number | null>(null);
-
-    const content = {
-        en: {
-            title: 'Sacred Gallery',
-            subtitle: 'Glimpses of the Divine Temple and Its Journey',
-            img_alts: [
-                'Temple front view',
-                'Sanctum area',
-                'Evening aarti',
-                'Divine statue',
-                'Construction progress'
-            ]
-        },
-        te: {
-            title: 'పవిత్ర గ్యాలరీ',
-            subtitle: 'దివ్య ఆలయ విశేషాలు',
-            img_alts: [
-                'ఆలయ ముందు భాగం',
-                'గర్భగుడి ప్రాంతం',
-                'సాయంత్రం హారతి',
-                'దివ్య విగ్రహం',
-                'నిర్మాణ పురోగతి'
-            ]
-        },
-        hi: {
-            title: 'पवित्र गैलरी',
-            subtitle: 'दिव्य मंदिर और उसकी यात्रा की झलकियाँ',
-            img_alts: [
-                'मंदिर का अग्र दृश्य',
-                'गर्भगृह क्षेत्र',
-                'संध్యా आरती',
-                'दिव्य मूर्ति',
-                'निर्माण प्रगति'
-            ]
-        }
-    }[language];
+    const content = getComponentContent(language).GallerySection;
 
     const localizedImages = images.map((img, i) => ({
         ...img,
-        alt: content.img_alts[i] || img.alt
+        alt: content.img_alts[i] || img.title
     }));
 
+    const nextImage = (e?: React.MouseEvent) => {
+        e?.stopPropagation();
+        if (selected !== null) {
+            setSelected((selected + 1) % localizedImages.length);
+        }
+    };
+
+    const prevImage = (e?: React.MouseEvent) => {
+        e?.stopPropagation();
+        if (selected !== null) {
+            setSelected((selected - 1 + localizedImages.length) % localizedImages.length);
+        }
+    };
+
     return (
-        <section id="gallery" className="py-20 px-4">
-            <div className="max-w-6xl mx-auto">
+        <section className="py-24 px-4 bg-transparent min-h-screen flex flex-col justify-center">
+            <div className="max-w-7xl mx-auto w-full">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center mb-12"
+                    className="text-center mb-16"
                 >
-                    <span className="text-4xl text-temple-gold block mb-4">ॐ</span>
-                    <h2 className="font-sacred text-3xl md:text-4xl text-temple-gold mb-4">{content.title}</h2>
-                    <div className="sacred-divider"><span className="text-temple-gold text-sm">✦</span></div>
-                    <p className="font-body text-temple-cream mt-4">{content.subtitle}</p>
+                    <h2 className="font-sacred text-4xl md:text-5xl text-temple-gold mb-4 drop-shadow-sm">
+                        {content.title}
+                    </h2>
+                    <p className="font-body text-temple-cream/80 text-lg italic">
+                        {content.subtitle}
+                    </p>
+                    <div className="sacred-divider" />
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {localizedImages.map((img, i) => (
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {localizedImages.map((image, index) => (
                         <motion.div
-                            key={i}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            key={index}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
-                            transition={{ delay: i * 0.1 }}
-                            className="golden-border rounded-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow"
-                            onClick={() => setSelected(i)}
+                            transition={{ delay: index * 0.1 }}
+                            onClick={() => setSelected(index)}
+                            className="group relative aspect-[4/3] overflow-hidden rounded-xl cursor-pointer border-2 border-temple-gold/30 hover:border-temple-gold transition-all duration-500 shadow-2xl"
                         >
-                            <img src={img.src} alt={img.alt} className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500" />
+                            <img
+                                src={image.url}
+                                alt={image.alt}
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                                <Maximize2 className="text-temple-gold w-10 h-10 transform scale-0 group-hover:scale-100 transition-transform duration-500 delay-100" />
+                            </div>
                         </motion.div>
                     ))}
                 </div>
             </div>
 
-            {/* Lightbox */}
-            {selected !== null && (
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    className="fixed inset-0 z-[100] bg-temple-stone/95 flex items-center justify-center p-4"
-                    onClick={() => setSelected(null)}
-                >
-                    <button className="absolute top-6 right-6 text-temple-cream hover:text-temple-gold" onClick={() => setSelected(null)}>
-                        <X className="w-8 h-8" />
-                    </button>
-                    <img src={localizedImages[selected].src} alt={localizedImages[selected].alt} className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl" />
-                </motion.div>
-            )}
+            <AnimatePresence>
+                {selected !== null && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setSelected(null)}
+                        className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex items-center justify-center p-4"
+                    >
+                        <button
+                            onClick={() => setSelected(null)}
+                            className="absolute top-6 right-6 text-temple-gold hover:text-white transition-colors p-2"
+                        >
+                            <X size={40} />
+                        </button>
+
+                        <button
+                            onClick={prevImage}
+                            className="absolute left-4 top-1/2 -translate-y-1/2 text-temple-gold hover:text-white transition-colors p-2 md:p-4"
+                        >
+                            <ChevronLeft size={60} />
+                        </button>
+
+                        <button
+                            onClick={nextImage}
+                            className="absolute right-4 top-1/2 -translate-y-1/2 text-temple-gold hover:text-white transition-colors p-2 md:p-4"
+                        >
+                            <ChevronRight size={60} />
+                        </button>
+
+                        <motion.div
+                            layoutId={`gallery-${selected}`}
+                            className="relative max-w-5xl w-full max-h-[85vh] flex flex-col items-center"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <img
+                                src={localizedImages[selected].url}
+                                alt={localizedImages[selected].alt}
+                                className="w-full h-full object-contain rounded-lg shadow-2xl border border-temple-gold/20"
+                            />
+                            <p className="mt-6 text-temple-gold font-sacred text-2xl tracking-widest text-center">
+                                {localizedImages[selected].alt}
+                            </p>
+                            <p className="mt-2 text-temple-cream/60 font-body text-sm">
+                                Image {selected + 1} of {localizedImages.length}
+                            </p>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </section>
     );
 };

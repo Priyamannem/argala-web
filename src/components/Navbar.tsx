@@ -11,6 +11,8 @@ import toranamImg from '@/assets/toranam.png';
 
 import diyaImg from '@/assets/diya.png';
 
+import { getComponentContent } from '@/lang';
+
 const languages: { code: Language; label: string }[] = [
   { code: 'en', label: 'English' },
   { code: 'te', label: 'తెలుగు' },
@@ -25,38 +27,7 @@ const Navbar = () => {
   const langRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
-  const content = {
-    en: {
-      home: 'Home',
-      about: 'About',
-      gallery: 'Gallery',
-      contact: 'Contact',
-      donate: 'Donate',
-      brochure: 'Brochure',
-      temple_name: 'Sri Maha Chandi Argala',
-      border_alt: 'border decoration',
-    },
-    te: {
-      home: 'హోమ్',
-      about: 'గురించి',
-      gallery: 'గ్యాలరీ',
-      contact: 'సంప్రదించండి',
-      donate: 'విరాళం',
-      brochure: 'బ్రోచర్',
-      temple_name: 'శ్రీ మహా చండి అర్గళ',
-      border_alt: 'అలంకార సరిహద్దు',
-    },
-    hi: {
-      home: 'होम',
-      about: 'बारे में',
-      gallery: 'गैलरी',
-      contact: 'संपर्क',
-      donate: 'दान',
-      brochure: 'ब्रोशर',
-      temple_name: 'श्री महा चण्डी अर्गला',
-      border_alt: 'सजावटी सीमा',
-    }
-  }[language];
+  const content = getComponentContent(language).Navbar;
 
   const navLinks = [
     { path: '/', label: content.home },

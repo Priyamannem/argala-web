@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import { Heart, Shield, Users } from 'lucide-react';
 import { toast } from 'sonner';
 
+import { getComponentContent } from '@/lang';
+
 const presetAmounts = [1000, 5000, 10000, 20000];
 
 const DonationSection = () => {
@@ -13,77 +15,7 @@ const DonationSection = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
-  const content = {
-    en: {
-      title: 'Join the Sacred Mission',
-      subtitle: 'Be a Part of the Divine Construction',
-      desc: 'We invite devotees, donors, and protectors of Sanatana Dharma to join this divine cause and contribute towards the completion of the Maha Chandi Argala Kshetram.',
-      card_title: 'TEMPLE CONSTRUCTION',
-      card_desc: 'Support the sacred construction of Maha Chandi Argala Kshetram',
-      presets_label: 'Presets Selection',
-      custom_label: 'Custom Offering Amount',
-      summary_label: 'Your Sacred Offering',
-      submit_btn: 'Proceed to Sacred Offering',
-      blessings_title: 'Blessings of Giving',
-      name_placeholder: 'Full Name',
-      email_placeholder: 'Email Address',
-      error_fields: 'Please fill in your name and email',
-      error_amount: 'Please select or enter an amount',
-      success_msg: 'Thank you for your generous offering!',
-      merit_title: 'Spiritual Merit',
-      merit_desc: 'Accumulate positive karma through selfless service to the divine',
-      protection_title: 'Divine Protection',
-      protection_desc: 'Receive the protective blessings of Argaladevi for you and your family',
-      community_title: 'Community Impact',
-      community_desc: 'Help create a spiritual center that serves thousands of devotees',
-    },
-    te: {
-      title: 'పవిత్ర మిషన్‌లో చేరండి',
-      subtitle: 'దివ్య నిర్మాణంలో భాగం కండి',
-      desc: 'సామాన్యులను, భక్తులను మరియు సనాతన ధర్మ రక్షకులను మహా చండి అర్గళ క్షేత్రం నిర్మాణంలో భాగస్వాములు కావాలని ఆహ్వానిస్తున్నాము.',
-      card_title: 'ఆలయ నిర్మాణం',
-      card_desc: 'మహా చండి అర్గళ క్షేత్రం యొక్క పవిత్ర నిర్మాణానికి మద్దతు ఇవ్వండి',
-      presets_label: 'మొత్తాన్ని ఎంచుకోండి',
-      custom_label: 'ఇతర మొత్తం',
-      summary_label: 'మీ పవిత్ర సమర్పణ',
-      submit_btn: 'పవిత్ర సమర్పణకు కొనసాగండి',
-      blessings_title: 'దానం యొక్క ఆశీర్వాదాలు',
-      name_placeholder: 'పూర్తి పేరు',
-      email_placeholder: 'ఇమెయిల్ చిరునామా',
-      error_fields: 'దయచేసి మీ పేరు మరియు ఇమెయిల్ నింపండి',
-      error_amount: 'దయచేసి మొత్తాన్ని ఎంచుకోండి లేదా నమోదు చేయండి',
-      success_msg: 'మీ ఉదారమైన సమర్పణకు ధన్యవాదాలు!',
-      merit_title: 'ఆధ్యాత్మిక పుణ్యం',
-      merit_desc: 'దివ్యానికి నిస్వార్థ సేవ ద్వారా సానుకూల కర్మను సంపాదించండి',
-      protection_title: 'దివ్య రక్షణ',
-      protection_desc: 'మీ మరియు మీ కుటుంబం కోసం అర్గళాదేవి రక్షణ ఆశీర్వాదాలను పొందండి',
-      community_title: 'సముదాయ ప్రభావం',
-      community_desc: 'వేలాది భక్తులకు సేవ చేసే ఆధ్యాత్మిక కేంద్రాన్ని సృష్టించడంలో సహాయపడండి',
-    },
-    hi: {
-      title: 'पवित्र मिशन में शामिल हों',
-      subtitle: 'दिव्य निर्माण का हिस्सा बनें',
-      desc: 'हम भक्तों, दानदाताओं और सनातन धर्म के रक्षकों को इस दिव्य कार्य में शामिल होने के लिए आमंत्रित करते हैं।',
-      card_title: 'मंदिर निर्माण',
-      card_desc: 'महा चण्डी अर्गला क्षेत्रम के पवित्र निर्माण में सहयोग करें',
-      presets_label: 'राशि चुनें',
-      custom_label: 'अन्य राशि',
-      summary_label: 'आपका पवित्र अर्पण',
-      submit_btn: 'पवित्र समर्पण के लिए आगे बढ़ें',
-      blessings_title: 'दान के आशीर्वाद',
-      name_placeholder: 'पूरा नाम',
-      email_placeholder: 'ईमेल पता',
-      error_fields: 'कृपया अपना नाम और ईमेल भरें',
-      error_amount: 'कृपया राशि चुनें या दर्ज करें',
-      success_msg: 'आपके उदार अर्पण के लिए धन्यवाद!',
-      merit_title: 'आध्यात्मिक पुण्य',
-      merit_desc: 'दिव्य की निस्वार्थ सेवा के माध्यम से सकारात्मक कर्म अर्जित करें',
-      protection_title: 'दिव्य सुरक्षा',
-      protection_desc: 'आपके और आपके परिवार के लिए अर्गलादेवी के सुरक्षात्मक आशीर्वाद प्राप्त करें',
-      community_title: 'सामुदायिक प्रभाव',
-      community_desc: 'हजारों भक्तों की सेवा करने वाला एक आध्यात्मिक केंद्र बनाने में मदद करें',
-    }
-  }[language];
+  const content = getComponentContent(language).DonationSection;
 
   const amount = customAmount ? parseInt(customAmount) : (selectedAmount || 0);
 
