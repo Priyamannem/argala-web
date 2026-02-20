@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;500;600;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/samarkan');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 25% 95%;
+    --foreground: 20 15% 15%;
+
+    --card: 33 30% 92%;
+    --card-foreground: 20 15% 15%;
+
+    --popover: 30 25% 95%;
+    --popover-foreground: 20 15% 15%;
+
+    --primary: 0 55% 28%;
+    --primary-foreground: 40 30% 95%;
+
+    --secondary: 33 30% 88%;
+    --secondary-foreground: 20 15% 15%;
+
+    --muted: 33 20% 90%;
+    --muted-foreground: 20 10% 40%;
+
+    --accent: 43 74% 49%;
+    --accent-foreground: 20 15% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 35 30% 80%;
+    --input: 35 30% 80%;
+    --ring: 43 74% 49%;
+
+    --radius: 0.5rem;
+
+    --temple-maroon: 0 55% 10%;
+    --temple-gold: 43 74% 49%;
+    --temple-saffron: 30 90% 55%;
+    --temple-stone: 30 10% 20%;
+    --temple-beige: 33 30% 90%;
+    --temple-cream: 40 30% 95%;
+    --temple-red: 0 75% 45%;
+    --temple-orange-light: 30 90% 96%;
+    --temple-yellow-light: 45 90% 96%;
+    --temple-teal: 170 50% 30%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 20 15% 8%;
+    --foreground: 33 30% 90%;
+
+    --card: 20 15% 12%;
+    --card-foreground: 33 30% 90%;
+
+    --popover: 20 15% 10%;
+    --popover-foreground: 33 30% 90%;
+
+    --primary: 0 55% 35%;
+    --primary-foreground: 40 30% 95%;
+
+    --secondary: 20 15% 18%;
+    --secondary-foreground: 33 30% 90%;
+
+    --muted: 20 10% 20%;
+    --muted-foreground: 33 15% 60%;
+
+    --accent: 43 74% 49%;
+    --accent-foreground: 20 15% 10%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 20 15% 22%;
+    --input: 20 15% 22%;
+    --ring: 43 74% 49%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Lora', Georgia, serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Samarkan', 'Cinzel', serif;
+  }
+
+  nav h1,
+  nav h2,
+  nav h3,
+  nav h4,
+  nav h5,
+  nav h6,
+  footer h1,
+  footer h2,
+  footer h3,
+  footer h4,
+  footer h5,
+  footer h6 {
+    font-family: 'Cinzel', serif;
+  }
+}
+
+@layer components {
+  .font-sacred {
+    font-family: 'Samarkan', 'Cinzel', serif;
+  }
+
+  nav .font-sacred,
+  footer .font-sacred {
+    font-family: 'Cinzel', serif;
+  }
+
+  .font-body {
+    font-family: 'Lora', Georgia, serif;
+  }
+
+  .font-devanagari {
+    font-family: 'Noto Sans Devanagari', serif;
+  }
+
+  .font-telugu {
+    font-family: 'Noto Sans Telugu', serif;
+  }
+
+  .sacred-divider {
+    @apply flex items-center justify-center gap-4 my-8;
+  }
+
+  .sacred-divider::before,
+  .sacred-divider::after {
+    content: '';
+    @apply flex-1 h-px;
+    background: linear-gradient(90deg, transparent, hsl(var(--temple-maroon)), transparent);
+  }
+
+  .golden-border {
+    border: 2px solid hsl(var(--temple-gold));
+    box-shadow: 0 0 15px hsl(var(--temple-gold) / 0.2);
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 20px hsl(var(--temple-gold) / 0.3), 0 0 40px hsl(var(--temple-gold) / 0.1);
+  }
+
+  .text-gold-gradient {
+    background: linear-gradient(135deg, hsl(var(--temple-gold)), hsl(38 80% 60%), hsl(var(--temple-gold)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-sacred-gradient {
+    background: linear-gradient(to right, #800000, #b22222, #ff8c00, #ffd700);
+  }
+
+  /* Filter to convert image to temple-maroon (approx hsl(0, 55%, 28%)) */
+  .maroon-filter {
+    filter: invert(15%) sepia(95%) saturate(3000%) hue-rotate(350deg) brightness(50%) contrast(120%);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow-pulse {
+
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes diya-flicker {
+
+  0%,
+  100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+
+  25% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: scale(0.95);
+  }
+
+  75% {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.animate-diya {
+  animation: diya-flicker 2s ease-in-out infinite;
+}
+
+@keyframes sway {
+
+  0%,
+  100% {
+    transform: rotate(-3deg);
+    transform-origin: top center;
+  }
+
+  50% {
+    transform: rotate(3deg);
+    transform-origin: top center;
+  }
+}
+
+.animate-sway {
+  animation: sway 4s ease-in-out infinite;
+}
