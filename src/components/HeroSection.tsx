@@ -102,15 +102,9 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
             <button
               onClick={() => scrollTo('donate')}
-              className="px-8 py-3 bg-temple-gold/80 text-temple-cream font-sacred text-sm tracking-widest uppercase rounded-sm hover:bg-temple-saffron transition-all duration-300 glow-gold"
+              className="px-8 py-3 bg-temple-gold/80 text-temple-cream font-body text-base rounded-sm hover:bg-temple-saffron transition-all duration-300 glow-gold"
             >
               {content.cta_donate}
-            </button>
-            <button
-              onClick={() => scrollTo('about')}
-              className="px-8 py-3 border-2 border-temple-gold/60 text-temple-cream font-sacred text-sm tracking-widest uppercase rounded-sm hover:bg-temple-gold/10 transition-all duration-300"
-            >
-              {content.cta_darshan}
             </button>
           </div>
         </motion.div>
