@@ -9,6 +9,8 @@ import brochurePdf from '@/assets/broucher.pdf';
 import borderImg from '@/assets/border.png';
 import toranamImg from '@/assets/toranam.png';
 
+import diyaImg from '@/assets/diya.png';
+
 const languages: { code: Language; label: string }[] = [
   { code: 'en', label: 'English' },
   { code: 'te', label: 'తెలుగు' },
@@ -99,8 +101,9 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-5 lg:px-5 relative z-0 -mt-7 md:-mt-7">
         <div className="flex items-center justify-between py-0">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 py-0">
-            <span className="font-sacred text-sm md:text-base text-temple-cream font-semibold tracking-wide hidden sm:block">
+          <Link to="/" className="flex items-center gap-1 sm:gap-2 py-0">
+            <img src={diyaImg} alt="logo" className="w-5 h-5 xs:w-6 xs:h-6 object-contain animate-diya" />
+            <span className="font-sacred text-[10px] xs:text-xs sm:text-sm md:text-base text-temple-gold font-semibold tracking-wide">
               {content.temple_name}
             </span>
           </Link>

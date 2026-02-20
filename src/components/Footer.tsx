@@ -82,7 +82,7 @@ const Footer = () => {
 
         <footer className="bg-temple-maroon text-temple-cream/80 relative z-10 border-t border-temple-gold/10">
           {/* Main footer content */}
-          <div className="max-w-7xl mx-auto px-4 py-4">
+          <div className="hidden md:block max-w-7xl mx-auto px-4 py-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Temple info */}
               <div className="lg:col-span-1">
