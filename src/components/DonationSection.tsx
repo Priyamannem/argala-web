@@ -8,14 +8,6 @@ import { getComponentContent } from '@/lang';
 
 const presetAmounts = [1000, 5000, 10000, 20000];
 
-declare global {
-  interface Window {
-    Razorpay: any;
-  }
-}
-
-const RAZORPAY_KEY_ID = "rzp_test_SIKwOLvoLI7PIk"; // Placeholder for Razorpay Key ID
-
 const DonationSection = () => {
   const { language } = useLanguage();
   const [selectedAmount, setSelectedAmount] = useState<number | null>(5000);
@@ -35,38 +27,15 @@ const DonationSection = () => {
   };
 
   const handlePayment = () => {
-    if (!window.Razorpay) {
-      toast.error("Razorpay SDK failed to load. Are you online?");
-      return;
-    }
+    // Payment integration removed as per request
+    // Successfully "submits" the form without opening Razorpay
+    toast.success(content.success_msg);
 
-    const options = {
-      key: RAZORPAY_KEY_ID,
-      amount: amount * 100, // Amount in paise
-      currency: "INR",
-      name: "Sri Maha Chandi Argala Kshetram",
-      description: content.card_desc,
-      image: "/diya.png",
-      handler: function (response: any) {
-        toast.success(content.success_msg);
-        console.log("Payment Success:", response);
-        // Clear form
-        setName('');
-        setEmail('');
-        setCustomAmount('');
-        setSelectedAmount(5000);
-      },
-      prefill: {
-        name: name,
-        email: email,
-      },
-      theme: {
-        color: "#B8860B",
-      },
-    };
-
-    const rzp = new window.Razorpay(options);
-    rzp.open();
+    // Clear form after submission
+    setName('');
+    setEmail('');
+    setCustomAmount('');
+    setSelectedAmount(5000);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
