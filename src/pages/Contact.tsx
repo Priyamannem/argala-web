@@ -55,9 +55,8 @@ const Contact = () => {
             {/* Left Column: Spiritual Content & Contact info */}
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} className="space-y-12">
               {/* Spiritual Call to Action */}
-              <div className="space-y-8 px-2">
+              <div className="space-y-8 px-2 text-center md:text-left">
                 <div className="space-y-3 relative">
-                  <span className="absolute -left-4 top-0 text-temple-gold animate-pulse text-xl">✨ </span>
                   <p className="font-sacred text-temple-gold text-xl lg:text-2xl leading-tight">
                     {content.call_to_action}
                   </p>
@@ -79,7 +78,7 @@ const Contact = () => {
                 </div>
 
                 <div className="pt-4 border-t border-temple-gold/20">
-                  <p className="font-sacred text-temple-gold text-lg tracking-[0.15em] uppercase border-b-2 border-temple-gold/10 inline-block pb-1">
+                  <p className="font-sacred text-temple-gold text-lg tracking-[0.15em] uppercase border-b-2 border-temple-gold/10 inline-block pb-1 text-center md:text-left">
                     {content.connect_today}
                   </p>
                   <p className="font-body text-temple-cream/60 text-sm italic mt-2">

@@ -223,14 +223,15 @@ const Navbar = () => {
             className="md:hidden bg-temple-stone/95 backdrop-blur-md border-t border-temple-gold/20"
           >
             <div className="px-4 py-4 space-y-1">
-              {navLinks.map((link) => (
-                link.path.startsWith('/#') ? (
+              {navLinks.map((link) => {
+                const displayLabel = link.path === '/gallery' ? getComponentContent(language).Footer.stotram_link : link.label;
+                return link.path.startsWith('/#') ? (
                   <button
                     key={link.path}
                     onClick={() => handleNavClick(link.path)}
                     className="block w-full text-left px-3 py-2 font-sacred text-sm tracking-widest uppercase text-temple-cream/80 hover:text-temple-gold"
                   >
-                    {link.label}
+                    {displayLabel}
                   </button>
                 ) : link.isDownload ? (
                   <a
@@ -240,7 +241,7 @@ const Navbar = () => {
                     onClick={() => setMobileOpen(false)}
                     className="block px-3 py-2 font-sacred text-sm tracking-widest uppercase text-temple-cream/80 hover:text-temple-gold"
                   >
-                    {link.label}
+                    {displayLabel}
                   </a>
                 ) : (
                   <Link
@@ -249,10 +250,10 @@ const Navbar = () => {
                     onClick={() => setMobileOpen(false)}
                     className="block px-3 py-2 font-sacred text-sm tracking-widest uppercase text-temple-cream/80 hover:text-temple-gold"
                   >
-                    {link.label}
+                    {displayLabel}
                   </Link>
                 )
-              ))}
+              })}
             </div>
           </motion.div>
         )}
