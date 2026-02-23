@@ -9,10 +9,10 @@ import TempleOverview from '@/components/TempleOverview';
 import LocationSection from '@/components/LocationSection';
 import ConstructionSection from '@/components/ConstructionSection';
 import VisionSection from '@/components/VisionSection';
-import GallerySection from '@/components/GallerySection';
+import StotramSection from '@/components/Stotram';
 import Footer from '@/components/Footer';
 import HangingDiyas from '@/components/HangingDiyas';
-import galleryBg from '@/assets/gallery.jpeg';
+import stotramBg from '@/assets/gallery.jpeg';
 
 const Index = () => {
   const footerRef = useRef<HTMLDivElement>(null);
@@ -29,7 +29,7 @@ const Index = () => {
 
       <div
         className="relative bg-cover bg-center bg-no-repeat bg-fixed bg-temple-stone"
-        style={{ backgroundImage: `url(${galleryBg})` }}
+        style={{ backgroundImage: `url(${stotramBg})` }}
       >
         {/* Black Shade Overlay - Increased darkness */}
         <div className="absolute inset-0 bg-black/80" />
@@ -42,7 +42,7 @@ const Index = () => {
           <HistoryTabs />
           <TempleOverview />
           <ConstructionSection />
-          <GallerySection />
+          <StotramSection />
           <LocationSection />
           <VisionSection />
           <div ref={footerRef}>

@@ -2,7 +2,7 @@ export const en = {
     // Nav
     'nav.home': 'Home',
     'nav.about': 'About',
-    'nav.gallery': 'Stotram',
+    'nav.stotram': 'Stotram',
     'nav.brochure': 'Brochure',
     'nav.donate': 'Donate',
     'nav.contact': 'Contact',
@@ -85,7 +85,7 @@ export const en = {
     'mantras.title': 'Sacred Mantras',
     'mantras.1': 'Om Argaladevi Namaha',
     'mantras.1_meaning': 'I bow to the divine mother Argaladevi',
-    'mantras.2': 'Sarva Mangala Mangalye Shive Sarvartha Sadhike',
+    'mantras.2': 'Sarva Mangala Mangalye Shive Sarvartha Sadhike |\nSharanye Tryambake Gauri Narayani Namostute ||',
 
     // History tabs
     'tabs.history': 'History',
@@ -187,9 +187,9 @@ export const en = {
     'contact.subject_placeholder': 'Enter subject',
     'contact.send': 'Send Message',
 
-    // Gallery page
-    'gallery.title': 'Argala Stotram',
-    'gallery.subtitle': 'The sacred hymn of Goddess Argaladevi',
+    // Stotram page
+    'stotram.title': 'Argala Stotram',
+    'stotram.subtitle': 'The sacred hymn of Goddess Argaladevi',
 
     // Brochure page
     'brochure.title': 'Temple Brochure',

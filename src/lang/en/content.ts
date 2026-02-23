@@ -20,7 +20,7 @@ export const enContent = {
     AboutSection: {
         title: 'About Sri Argaladevi',
         desc: 'Argaladevi is one of the most revered goddesses in Hindu tradition, known for her fierce compassion and protective nature. She is the divine embodiment of Shakti, the cosmic energy that creates, sustains, and transforms the universe.',
-        mother_title: 'The Divine Mother',
+        mother_title: 'The significance of Goddess Argala in the Chandi Saptashati',
         mother_desc: 'Argaladevi represents the nurturing aspect of the Divine Mother, yet she is also fierce when protecting her devotees. Her name itself signifies \'the one who removes obstacles\' and \'the bestower of all good fortune.\'',
         mother_desc2: 'Ancient scriptures describe her as having multiple arms, each holding sacred symbols representing different aspects of divine power. Her benevolent smile brings peace, while her fierce form destroys negativity and evil.',
         img_alt: 'Divine Goddess Argaladevi',
@@ -29,7 +29,7 @@ export const enContent = {
         title: 'Sacred Mantras',
         mantra1: 'Om Argaladevi Namaha',
         meaning1: 'I bow to the divine mother Argaladevi',
-        mantra2: 'Sarva Mangala Mangalye Shive Sarvartha Sadhike',
+        mantra2: 'Sarva Mangala Mangalye Shive Sarvartha Sadhike |\nSharanye Tryambake Gauri Narayani Namostute ||',
     },
     HistoryTabs: {
         tabs: [
@@ -58,15 +58,14 @@ export const enContent = {
         ],
         img_alt: 'Temple Architecture',
     },
-    GallerySection: {
-        title: 'Sacred Gallery',
+    StotramSection: {
+        title: 'Argala Stotram',
         subtitle: 'Glimpses of the Divine Temple and Its Journey',
         img_alts: [
             'Temple front view',
             'Sanctum area',
             'Evening aarti',
-            'Divine statue',
-            'Construction progress'
+            'Divine statue'
         ]
     },
     LocationSection: {
@@ -87,7 +86,7 @@ export const enContent = {
     Navbar: {
         home: 'Home',
         about: 'About',
-        gallery: 'Gallery',
+        stotram: 'Stotram',
         contact: 'Contact',
         donate: 'Donate',
         brochure: 'Brochure',

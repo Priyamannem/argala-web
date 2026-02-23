@@ -28,8 +28,8 @@ export const MusicProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const lastTrackId = useRef<string>('');
 
     // Normalize paths
-    const isGalleryPage = location.pathname === '/gallery' || location.pathname === '/stotram';
-    const targetVideoId = isGalleryPage ? STOTRAM_MUSIC_ID : BG_MUSIC_ID;
+    const isStotramPage = location.pathname === '/stotram';
+    const targetVideoId = isStotramPage ? STOTRAM_MUSIC_ID : BG_MUSIC_ID;
 
     useEffect(() => {
         // Load YouTube API

@@ -54,7 +54,7 @@ const Footer = () => {
                   {[
                     { label: content.home_link || 'Home', path: '/' },
                     { label: content.about_link || 'About', path: '/about' },
-                    { label: content.stotram_link || 'Stotram', path: '/gallery' },
+                    { label: content.stotram_link || 'Stotram', path: '/stotram' },
                     { label: content.contact_link || 'Contact', path: '/contact' },
                     { label: content.donate_link || 'Donate', path: '/donate' },
                     { label: content.brochure_link || 'Brochure', path: brochurePdf, isDownload: true },

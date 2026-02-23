@@ -49,7 +49,7 @@ const MantrasSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="border border-temple-gold/50 rounded-lg p-8 bg-black/40 backdrop-blur-sm hover:border-temple-gold transition-all duration-300"
           >
-            <p className="font-devanagari text-xl md:text-2xl font-extrabold text-temple-gold">
+            <p className="font-devanagari text-xl md:text-2xl font-extrabold text-temple-gold whitespace-pre-line">
               "{content.mantra2}"
             </p>
           </motion.div>

@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { MusicProvider } from "@/contexts/MusicContext";
 import Index from "./pages/Index";
-import Gallery from "./pages/Stotram";
+import Stotram from "./pages/Stotram";
 import Contact from "./pages/Contact";
 import Donate from "./pages/Donate";
 import About from "./pages/About";
@@ -24,7 +24,7 @@ const App = () => (
           <MusicProvider>
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/stotram" element={<Stotram />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/donate" element={<Donate />} />
               <Route path="/about" element={<About />} />

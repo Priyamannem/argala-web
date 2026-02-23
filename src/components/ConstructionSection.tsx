@@ -1,7 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
 import templeConstruction from '@/assets/temple-construction.jpg';
-import galleryBg from '@/assets/gallery.jpeg';
+import stotramBg from '@/assets/gallery.jpeg';
 import { CheckCircle, Flower2 } from 'lucide-react';
 
 import { getComponentContent } from '@/lang';
@@ -15,7 +15,7 @@ const ConstructionSection = () => {
       {/* Background with Mandala and Darker Overlay to match reference */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center opacity-30 mix-blend-overlay"
-        style={{ backgroundImage: `url(${galleryBg})` }}
+        style={{ backgroundImage: `url(${stotramBg})` }}
       />
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/60 via-temple-maroon/80 to-black/60" />
 

@@ -1,7 +1,7 @@
 export const hi = {
     'nav.home': 'होम',
     'nav.about': 'परिचय',
-    'nav.gallery': 'स्तोत्र',
+    'nav.stotram': 'स्तोत्र',
     'nav.brochure': 'ब्रोशर',
     'nav.donate': 'दान',
     'nav.contact': 'संपर्क',
@@ -78,9 +78,9 @@ export const hi = {
     'about_page.temple_name': 'श्री महा चण्डी अर्गला क्षेत्रम',
 
     'mantras.title': 'पवित्र मंत्र',
-    'mantras.1': 'Om Argaladevi Namaha',
+    'mantras.1': 'ॐ अर्गलादेव्यै नमः',
     'mantras.1_meaning': 'मैं दिव्य माता अर्गलादेवी को नमन करता हूँ',
-    'mantras.2': 'Sarva Mangala Mangalye Shive Sarvartha Sadhike',
+    'mantras.2': 'सर्वमङ्गलमाङ्गल्ये शिवे सर्वार्थसाधिके ।\nशरण्ये त्र्यम्बके गौरि नारायणि नमोऽस्तु ते ॥',
 
     'tabs.history': 'इतिहास',
     'tabs.geography': 'भूगोल',
@@ -173,8 +173,8 @@ export const hi = {
     'contact.subject_placeholder': 'विषय दर्ज करें',
     'contact.send': 'संपर्क करें',
 
-    'gallery.title': 'अर्गला स्तोत्र',
-    'gallery.subtitle': 'अर्गलादेवी का पवित्र स्तोत्र',
+    'stotram.title': 'अर्गला स्तोत्र',
+    'stotram.subtitle': 'अर्गलादेवी का पवित्र स्तोत्र',
 
     'brochure.title': 'मंदिर ब्रोशर',
     'brochure.subtitle': 'दिव्य मिशन और पवित्र वास्तुकला के बारे में जानें',

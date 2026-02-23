@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Send } from 'lucide-react';
 import { toast } from 'sonner';
 import HangingDiyas from '@/components/HangingDiyas';
-import galleryBg from '@/assets/gallery.jpeg';
+import stotramBg from '@/assets/gallery.jpeg';
 import toranamImg from '@/assets/toranam.png';
 
 import { getComponentContent } from '@/lang';
@@ -39,7 +39,7 @@ const Contact = () => {
 
       <div
         className="relative pt-[calc(48px+3.5rem)] md:pt-[calc(56px+4.5rem)] bg-cover bg-center bg-no-repeat bg-fixed bg-temple-stone min-h-screen"
-        style={{ backgroundImage: `url(${galleryBg})` }}
+        style={{ backgroundImage: `url(${stotramBg})` }}
       >
         {/* Black Shade Overlay - Increased darkness */}
         <div className="absolute inset-0 bg-black/80" />

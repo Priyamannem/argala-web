@@ -1,7 +1,7 @@
 export const te = {
     'nav.home': 'హోమ్',
     'nav.about': 'గురించి',
-    'nav.gallery': 'స్తోత్రం',
+    'nav.stotram': 'స్తోత్రం',
     'nav.brochure': 'బ్రోచర్',
     'nav.donate': 'దానం',
     'nav.contact': 'సంప్రదించండి',
@@ -77,10 +77,10 @@ export const te = {
     'about_page.journey_btn': 'ఇప్పుడే విరాళం ఇవ్వండి',
     'about_page.temple_name': 'శ్రీ మహా చండి అర్గళాదేవి క్షేత్రం',
 
-    'mantras.title': 'పవిత్ర మంత్రాలు',
-    'mantras.1': 'Om Argaladevi Namaha',
+    'mantras.title': 'దైవ ప్రార్ధనా శ్లోకాలు',
+    'mantras.1': 'ఓం అర్గళాదేవ్యై నమః',
     'mantras.1_meaning': 'దివ్య మాత అర్గళాదేవికి నమస్కరిస్తున్నాను',
-    'mantras.2': 'Sarva Mangala Mangalye Shive Sarvartha Sadhike',
+    'mantras.2': 'సర్వమంగళ మాంగల్యే శివే సర్వార్థ సాధికే ।\nశరణ్యే త్ర్యంబకే దేవి నారాయణి నమోస్తుతే ||',
 
     'tabs.history': 'చరిత్ర',
     'tabs.geography': 'భౌగోళికం',
@@ -173,8 +173,8 @@ export const te = {
     'contact.subject_placeholder': 'విషయాన్ని నమోదు చేయండి',
     'contact.send': 'సంప్రదించండి',
 
-    'gallery.title': 'అర్గళా స్తోత్రం',
-    'gallery.subtitle': 'అర్గళాదేవి యొక్క పవిత్ర స్తోత్రం',
+    'stotram.title': 'అర్గళా స్తోత్రం',
+    'stotram.subtitle': 'అర్గళాదేవి యొక్క పవిత్ర స్తోత్రం',
 
     'brochure.title': 'ఆలయ బ్రోచర్',
     'brochure.subtitle': 'దివ్య మిషన్ మరియు పవిత్ర వాస్తుశిల్పం గురించి తెలుసుకోండి',

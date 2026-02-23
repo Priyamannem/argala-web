@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 import { Landmark, Heart, Users, Receipt, Sparkles, Star, ArrowRight } from 'lucide-react';
 import HangingDiyas from '@/components/HangingDiyas';
-import galleryBg from '@/assets/gallery.jpeg';
+import stotramBg from '@/assets/gallery.jpeg';
 import templeConstruction from '@/assets/temple-construction.jpg';
 import goddessStatue from '@/assets/goddess-statue.jpg';
 import heroTemple2 from '@/assets/hero-temple-2.jpg';
@@ -33,7 +33,7 @@ const About = () => {
 
             <div
                 className="relative pt-[calc(48px+3rem)] md:pt-[calc(56px+4rem)] bg-cover bg-center bg-no-repeat bg-fixed bg-temple-stone min-h-screen"
-                style={{ backgroundImage: `url(${galleryBg})` }}
+                style={{ backgroundImage: `url(${stotramBg})` }}
             >
                 {/* Dark Overlay */}
                 <div className="absolute inset-0 bg-black/85" />

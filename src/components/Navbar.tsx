@@ -32,7 +32,7 @@ const Navbar = () => {
   const navLinks = [
     { path: '/', label: content.home },
     { path: '/about', label: content.about },
-    { path: '/gallery', label: content.gallery },
+    { path: '/stotram', label: content.stotram },
     { path: '/contact', label: content.contact },
     { path: '/donate', label: content.donate, isButton: true },
     { path: brochurePdf, label: content.brochure, isDownload: true, isButton: true },
@@ -146,7 +146,7 @@ const Navbar = () => {
             </div>
 
             {/* Music Control */}
-            {location.pathname !== '/gallery' && (
+            {location.pathname !== '/stotram' && (
               <button
                 onClick={toggleMute}
                 className="p-2 text-temple-cream/80 hover:text-temple-gold transition-all duration-300 group relative"
@@ -196,7 +196,7 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Music Control */}
-            {location.pathname !== '/gallery' && (
+            {location.pathname !== '/stotram' && (
               <button onClick={toggleMute} className="p-2 text-temple-cream/80 hover:text-temple-gold transition-colors">
                 {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5 text-temple-gold" />}
               </button>
@@ -224,7 +224,7 @@ const Navbar = () => {
           >
             <div className="px-4 py-4 space-y-1">
               {navLinks.map((link) => {
-                const displayLabel = link.path === '/gallery' ? getComponentContent(language).Footer.stotram_link : link.label;
+                const displayLabel = link.path === '/stotram' ? getComponentContent(language).Footer.stotram_link : link.label;
                 return link.path.startsWith('/#') ? (
                   <button
                     key={link.path}

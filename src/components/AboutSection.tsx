@@ -43,9 +43,7 @@ const AboutSection = () => {
             transition={{ duration: 0.8 }}
             className="space-y-4 md:space-y-6"
           >
-            {language !== 'te' && (
-              <span className="text-3xl text-temple-gold font-extrabold">ॐ</span>
-            )}
+            {/* Removed Om symbol */}
 
             {/* Move description here for Telugu */}
             {language === 'te' && (
