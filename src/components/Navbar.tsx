@@ -164,10 +164,6 @@ const Navbar = () => {
                     />
                   </div>
                 )}
-                {/* Tooltip on hover */}
-                <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-black/80 text-[10px] text-temple-gold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none font-sacred uppercase tracking-widest">
-                  {isMuted ? "Play Music" : "Mute Music"}
-                </span>
               </button>
             )}
           </div>
