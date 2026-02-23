@@ -90,7 +90,7 @@ export const hiContent = {
         contact: 'संपर्क',
         donate: 'दान',
         brochure: 'ब्रोशर',
-        temple_name: 'श्री महा चण्डी अर्गला',
+        temple_name: 'श्री महा चण्डी अर्गला देवी',
         border_alt: 'सजावटी सीमा',
     },
     Footer: {
@@ -107,7 +107,7 @@ export const hiContent = {
         donate_link: 'दान',
         brochure_link: 'ब्रोशर',
         crafted_with_devotion: 'भक्ति के साथ निर्मित',
-        temple_name: 'श्री महा चण्डी अर्गला',
+        temple_name: 'श्री महा चण्डी अर्गला देवी',
         diya_alt: 'दीया',
     },
     AboutPage: {

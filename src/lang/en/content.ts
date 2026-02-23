@@ -90,7 +90,7 @@ export const enContent = {
         contact: 'Contact',
         donate: 'Donate',
         brochure: 'Brochure',
-        temple_name: 'Sri Maha Chandi Argala',
+        temple_name: 'Sri Maha Chandi Argala Devi',
         border_alt: 'border decoration',
     },
     Footer: {
@@ -107,7 +107,7 @@ export const enContent = {
         donate_link: 'Donate',
         brochure_link: 'Brochure',
         crafted_with_devotion: 'Crafted with Devotion',
-        temple_name: 'Sri Maha Chandi Argala',
+        temple_name: 'Sri Maha Chandi Argala Devi',
         diya_alt: 'diya',
     },
     HangingDiyas: {

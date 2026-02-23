@@ -27,7 +27,17 @@ const Contact = () => {
       toast.error(content.error_required || 'Please fill all required fields');
       return;
     }
-    toast.success(content.success_message || 'Message sent successfully! We will get back to you soon.');
+
+    // Construct WhatsApp message
+    const whatsappNumber = "918790817722";
+    const text = `*New Lead from Website*\n\n*Name:* ${name}\n*Email:* ${email}\n*Subject:* ${subject || 'N/A'}\n*Message:* ${message}`;
+    const encodedText = encodeURIComponent(text);
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
+
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank');
+
+    toast.success(content.success_message || 'Message prepared! Opening WhatsApp...');
     setName(''); setEmail(''); setSubject(''); setMessage('');
   };
 

@@ -90,7 +90,7 @@ export const teContent = {
         contact: 'సంప్రదించండి',
         donate: 'విరాళం',
         brochure: 'బ్రోచర్',
-        temple_name: 'శ్రీ మహా చండి అర్గళ',
+        temple_name: 'శ్రీ మహా చండి అర్గళా దేవి',
         border_alt: 'అలంకార సరిహద్దు',
     },
     Footer: {
@@ -107,7 +107,7 @@ export const teContent = {
         donate_link: 'విరాళం',
         brochure_link: 'బ్రోచర్',
         crafted_with_devotion: 'భక్తితో రూపొందించబడింది',
-        temple_name: 'శ్రీ మహా చండి అర్గళ',
+        temple_name: 'శ్రీ మహా చండి అర్గళా దేవి',
         diya_alt: 'దీపం',
     },
     AboutPage: {
