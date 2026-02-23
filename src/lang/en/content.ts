@@ -59,7 +59,7 @@ export const enContent = {
         img_alt: 'Temple Architecture',
     },
     StotramSection: {
-        title: 'Argala Stotram',
+        title: 'Gallery',
         subtitle: 'Glimpses of the Divine Temple and Its Journey',
         img_alts: [
             'Temple front view',

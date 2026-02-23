@@ -59,7 +59,7 @@ export const teContent = {
         img_alt: 'ఆలయ వాస్తుశిల్పం',
     },
     StotramSection: {
-        title: 'స్తోత్రం',
+        title: 'గ్యాలరీ',
         subtitle: 'దివ్య ఆలయం మరియు దాని ప్రయాణం యొక్క వీక్షణలు',
         img_alts: [
             'ఆలయ ముందు భాగం',

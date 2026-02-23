@@ -9,7 +9,7 @@ import TempleOverview from '@/components/TempleOverview';
 import LocationSection from '@/components/LocationSection';
 import ConstructionSection from '@/components/ConstructionSection';
 import VisionSection from '@/components/VisionSection';
-import StotramSection from '@/components/Stotram';
+import GallerySection from '@/components/GallerySection';
 import Footer from '@/components/Footer';
 import HangingDiyas from '@/components/HangingDiyas';
 import stotramBg from '@/assets/gallery.jpeg';
@@ -42,7 +42,7 @@ const Index = () => {
           <HistoryTabs />
           <TempleOverview />
           <ConstructionSection />
-          <StotramSection />
+          <GallerySection />
           <LocationSection />
           <VisionSection />
           <div ref={footerRef}>

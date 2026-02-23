@@ -1,13 +1,10 @@
-import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { motion, AnimatePresence } from 'framer-motion';
-import { X, ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { getComponentContent } from '@/lang';
 import heroTemple1 from '@/assets/hero-temple-1.jpg';
 import heroTemple2 from '@/assets/hero-temple-2.jpg';
 import heroTemple3 from '@/assets/hero-temple-3.jpg';
 import goddessStatue from '@/assets/goddess-statue.jpg';
-import stotramBg from '@/assets/gallery.jpeg';
 
 const images = [
     { url: heroTemple1, title: 'Temple Front View' },
@@ -16,7 +13,7 @@ const images = [
     { url: goddessStatue, title: 'Divine Statue' },
 ];
 
-const StotramSection = () => {
+const GallerySection = () => {
     const { language } = useLanguage();
     const content = getComponentContent(language).StotramSection;
 
@@ -72,4 +69,4 @@ const StotramSection = () => {
     );
 };
 
-export default StotramSection;
+export default GallerySection;

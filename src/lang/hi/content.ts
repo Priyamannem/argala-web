@@ -59,7 +59,7 @@ export const hiContent = {
         img_alt: 'मंदिर वास्तुकला',
     },
     StotramSection: {
-        title: 'स्तोत्र',
+        title: 'गैलरी',
         subtitle: 'दिव्य मंदिर और उसकी यात्रा की झलकियाँ',
         img_alts: [
             'मंदिर का अग्र दृश्य',
